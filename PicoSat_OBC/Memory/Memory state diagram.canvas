@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"a884c9852b453296","type":"text","text":"Start up of satellite","x":-405,"y":-460,"width":250,"height":60},
+		{"id":"6adb974158f5bf57","type":"text","text":"Wait to receive data","x":-405,"y":-340,"width":250,"height":60},
+		{"id":"dd3e2e4ff18922e6","x":-655,"y":60,"width":250,"height":60,"type":"text","text":"Pull packets from memory to send over [[Radio]]"},
+		{"id":"cdba34d155a0fddb","type":"text","text":"Receive data in temporary memory storage","x":-155,"y":60,"width":250,"height":60},
+		{"id":"46bfbea90726f897","x":-960,"y":60,"width":250,"height":60,"type":"text","text":"Check flag to signal if photo is in memory"},
+		{"id":"86ee5343048c09bc","type":"text","text":"Wait on ping from [[Radio]] to transmit or receive data","x":-405,"y":-40,"width":250,"height":60},
+		{"id":"bf1d6c2f7b79bcfb","type":"text","text":"Encrypt data using [[Reed-solomon error correcting]]","x":-405,"y":-120,"width":250,"height":60},
+		{"id":"6f26785c2bdaefe3","type":"text","text":"Store data from temporary memory to QSPI memory and check flag to signal if photo is in memory","x":-430,"y":-240,"width":300,"height":100}
+	],
+	"edges":[
+		{"id":"e50798be5cf9d3ca","fromNode":"6adb974158f5bf57","fromSide":"bottom","toNode":"6f26785c2bdaefe3","toSide":"top"},
+		{"id":"d67c891c32427b70","fromNode":"a884c9852b453296","fromSide":"bottom","toNode":"6adb974158f5bf57","toSide":"top"},
+		{"id":"9dc06097f84297d5","fromNode":"6f26785c2bdaefe3","fromSide":"bottom","toNode":"bf1d6c2f7b79bcfb","toSide":"top"},
+		{"id":"cbf03f2bb03e78cc","fromNode":"bf1d6c2f7b79bcfb","fromSide":"bottom","toNode":"86ee5343048c09bc","toSide":"top"},
+		{"id":"020c8de129d50fac","fromNode":"86ee5343048c09bc","fromSide":"bottom","toNode":"dd3e2e4ff18922e6","toSide":"top","label":"pull request"},
+		{"id":"b60ee7757375380a","fromNode":"cdba34d155a0fddb","fromSide":"right","toNode":"6f26785c2bdaefe3","toSide":"right"},
+		{"id":"4079fb8fde4dad9c","fromNode":"86ee5343048c09bc","fromSide":"bottom","toNode":"cdba34d155a0fddb","toSide":"top","label":"receive request"},
+		{"id":"23bb861270a70607","fromNode":"dd3e2e4ff18922e6","fromSide":"left","toNode":"46bfbea90726f897","toSide":"right"},
+		{"id":"b2b0528cf869b5b0","fromNode":"46bfbea90726f897","fromSide":"top","toNode":"6adb974158f5bf57","toSide":"left"}
+	]
+}

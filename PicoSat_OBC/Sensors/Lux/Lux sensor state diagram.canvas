@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"515272838682ba6b","type":"text","text":"Run [[Preliminary Tests]]","x":-260,"y":-840,"width":250,"height":60},
+		{"id":"310818fc065846b9","type":"text","text":"Take reading (blue or not)","x":-260,"y":-740,"width":250,"height":60},
+		{"id":"08648a1bb881c84e","type":"text","text":"(check if failed x times in a row) if not Wait","x":-10,"y":-620,"width":250,"height":60},
+		{"id":"c8b72e37c54e6c9f","type":"text","text":"Send data to [[Camera]]","x":-510,"y":-620,"width":250,"height":60},
+		{"id":"72a3fd16561f6dfb","type":"text","text":"Run [[Lux sensor error mode]]","x":140,"y":-840,"width":250,"height":56},
+		{"id":"29b40660a4a371f1","type":"text","text":"Initial start up of lux sensor","x":-260,"y":-1040,"width":250,"height":60},
+		{"id":"0fa8b92faae6a107","type":"text","text":"Enters [[Sleep mode]]","x":-260,"y":-460,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"288f3693667f7c42","fromNode":"515272838682ba6b","fromSide":"bottom","toNode":"310818fc065846b9","toSide":"top"},
+		{"id":"f2024eb32c5e5e0c","fromNode":"29b40660a4a371f1","fromSide":"bottom","toNode":"515272838682ba6b","toSide":"top"},
+		{"id":"3035ec3496f9282b","fromNode":"310818fc065846b9","fromSide":"bottom","toNode":"c8b72e37c54e6c9f","toSide":"top","label":"Blue"},
+		{"id":"5a5a5387ea5bb3c4","fromNode":"310818fc065846b9","fromSide":"bottom","toNode":"08648a1bb881c84e","toSide":"top","label":"Not Blue"},
+		{"id":"6cd90e6cea14ba99","fromNode":"08648a1bb881c84e","fromSide":"right","toNode":"310818fc065846b9","toSide":"right"},
+		{"id":"e3488c38e4e8350e","fromNode":"515272838682ba6b","fromSide":"right","toNode":"72a3fd16561f6dfb","toSide":"left","label":"Failed test"},
+		{"id":"a5788b940e21f3c3","fromNode":"72a3fd16561f6dfb","fromSide":"top","toNode":"515272838682ba6b","toSide":"top","label":"Attempt again"},
+		{"id":"88d3ba08d792a1f5","fromNode":"c8b72e37c54e6c9f","fromSide":"bottom","toNode":"0fa8b92faae6a107","toSide":"top"}
+	]
+}

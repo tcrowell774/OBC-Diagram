@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"b8d4d8d4daf3ec01","type":"text","text":"Run [[Preliminary Tests]]","x":-210,"y":-140,"width":250,"height":60},
+		{"id":"a8ce031e3f899a76","type":"text","text":"Run [[Current sensor error mode]]","x":190,"y":-140,"width":250,"height":56},
+		{"id":"a7192bf31673ed5c","type":"text","text":"Initial start up of current sensor","x":-210,"y":-340,"width":250,"height":60},
+		{"id":"b1692bf22ef98fcc","type":"text","text":"Enter [[Full failure mode]]","x":540,"y":-10,"width":250,"height":60},
+		{"id":"572f518c42181321","type":"text","text":"(check if failed x times in a row) if not enter error mode","x":65,"y":140,"width":275,"height":80},
+		{"id":"4288ccb08bb5426f","type":"text","text":"Take current reading ","x":-210,"y":-40,"width":250,"height":60},
+		{"id":"942496ad36e66df4","type":"text","text":"Begin [[Camera]]","x":-400,"y":110,"width":250,"height":60},
+		{"id":"7782e8b985c185d7","type":"text","text":"Enters [[Sleep mode]]","x":-400,"y":240,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"40d5ff3031800727","fromNode":"b8d4d8d4daf3ec01","fromSide":"bottom","toNode":"4288ccb08bb5426f","toSide":"top"},
+		{"id":"f35224d607cdffd9","fromNode":"b8d4d8d4daf3ec01","fromSide":"right","toNode":"a8ce031e3f899a76","toSide":"left","label":"Failed test"},
+		{"id":"495f22ed901f3f5b","fromNode":"a7192bf31673ed5c","fromSide":"bottom","toNode":"b8d4d8d4daf3ec01","toSide":"top"},
+		{"id":"0daae543e8e8bae5","fromNode":"a8ce031e3f899a76","fromSide":"top","toNode":"b8d4d8d4daf3ec01","toSide":"top","label":"Attempt again"},
+		{"id":"c1a40c7c68f49d30","fromNode":"4288ccb08bb5426f","fromSide":"bottom","toNode":"942496ad36e66df4","toSide":"top","label":"Within reason"},
+		{"id":"ff5a6bbf75f60570","fromNode":"942496ad36e66df4","fromSide":"bottom","toNode":"7782e8b985c185d7","toSide":"top"},
+		{"id":"9503598247c7e622","fromNode":"a8ce031e3f899a76","fromSide":"right","toNode":"b1692bf22ef98fcc","toSide":"top","label":"repeated failed sensor test"},
+		{"id":"75760e7079331208","fromNode":"4288ccb08bb5426f","fromSide":"bottom","toNode":"572f518c42181321","toSide":"top","label":"Not within reason"},
+		{"id":"62c865dbdfb8f3ae","fromNode":"572f518c42181321","fromSide":"right","toNode":"a8ce031e3f899a76","toSide":"bottom","label":"Has not failed x times"},
+		{"id":"b4ec9d9861556642","fromNode":"572f518c42181321","fromSide":"bottom","toNode":"b1692bf22ef98fcc","toSide":"bottom","label":"Failed x times"}
+	]
+}

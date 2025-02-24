@@ -1,0 +1,1 @@
+>TBT will result in full satellite shutdown

@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"b251655fd42b2b57","type":"text","text":"Run [[Preliminary Tests]]","x":-405,"y":-150,"width":250,"height":60},
+		{"id":"523c91739f6c54f4","type":"text","text":"Ping [[Eps battery]] for sufficient power","x":-405,"y":130,"width":250,"height":60},
+		{"id":"e0119ccb4b41c624","type":"text","text":"Ping [[Rotational velocity]]","x":-405,"y":260,"width":250,"height":60},
+		{"id":"cff4625141cbd723","type":"text","text":"Ping [[Current sensor]]","x":-405,"y":400,"width":250,"height":60},
+		{"id":"83d3c2e20d9f9e8e","type":"text","text":"Take photo","x":-405,"y":500,"width":250,"height":60},
+		{"id":"ea54977d6d22e6e7","type":"text","text":"Store and encrypt data to [[Memory]]","x":-405,"y":600,"width":250,"height":60},
+		{"id":"17bd0028a1005d19","type":"text","text":"Enters [[Sleep mode]]","x":-405,"y":700,"width":250,"height":60},
+		{"id":"bfb4e6303aa4c6a6","type":"text","text":"Initial start up of camera","x":-405,"y":-320,"width":250,"height":60},
+		{"id":"f0f6745dc92660c3","type":"text","text":"Wait x amount of time","x":-405,"y":-420,"width":250,"height":60},
+		{"id":"6f7fb95ae6c84e8b","type":"text","text":"Run [[Camera error mode]]","x":60,"y":-150,"width":250,"height":56},
+		{"id":"eec0134458efc46d","type":"text","text":"Enter [[Full camera failure mode]]","x":340,"y":35,"width":255,"height":60},
+		{"id":"6cbbe115c172280e","type":"text","text":"Ping [[Memory]] for already stored image","x":-412,"y":-5,"width":265,"height":70},
+		{"id":"b505297074cbe479","type":"text","text":"Ping failure to [[memory]] and return to [[Sleep mode]]","x":-860,"y":100,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"e2298e7da4e24258","fromNode":"b251655fd42b2b57","fromSide":"right","toNode":"6f7fb95ae6c84e8b","toSide":"left","label":"Failed test"},
+		{"id":"30d9db6662aae698","fromNode":"bfb4e6303aa4c6a6","fromSide":"bottom","toNode":"b251655fd42b2b57","toSide":"top"},
+		{"id":"a76fa8d6091f6737","fromNode":"6f7fb95ae6c84e8b","fromSide":"top","toNode":"b251655fd42b2b57","toSide":"top","label":"Attempt again"},
+		{"id":"034b102154e819e0","fromNode":"6f7fb95ae6c84e8b","fromSide":"right","toNode":"eec0134458efc46d","toSide":"top","label":"repeated failed test"},
+		{"id":"6606dbebea5c1930","fromNode":"ea54977d6d22e6e7","fromSide":"bottom","toNode":"17bd0028a1005d19","toSide":"top"},
+		{"id":"1cfcf173ff203af6","fromNode":"523c91739f6c54f4","fromSide":"bottom","toNode":"e0119ccb4b41c624","toSide":"top","label":"success"},
+		{"id":"6a4924ea926447e8","fromNode":"523c91739f6c54f4","fromSide":"left","toNode":"b505297074cbe479","toSide":"right","label":"fail"},
+		{"id":"881a8387f0a0bdfd","fromNode":"f0f6745dc92660c3","fromSide":"bottom","toNode":"bfb4e6303aa4c6a6","toSide":"top"},
+		{"id":"c06d2f0f10ddb09a","fromNode":"b505297074cbe479","fromSide":"top","toNode":"f0f6745dc92660c3","toSide":"top"},
+		{"id":"7b3001fe3fafbce8","fromNode":"e0119ccb4b41c624","fromSide":"left","toNode":"b505297074cbe479","toSide":"bottom","label":"unstable rotation"},
+		{"id":"215312d46170b845","fromNode":"b251655fd42b2b57","fromSide":"bottom","toNode":"6cbbe115c172280e","toSide":"top","label":"sucess"},
+		{"id":"131c702a0e627b63","fromNode":"6cbbe115c172280e","fromSide":"bottom","toNode":"523c91739f6c54f4","toSide":"top","label":"empty storage"},
+		{"id":"9ea397d27f1a7a26","fromNode":"6cbbe115c172280e","fromSide":"left","toNode":"b505297074cbe479","toSide":"right","label":"pre-existing image"},
+		{"id":"ed38526be38a3724","fromNode":"cff4625141cbd723","fromSide":"left","toNode":"b505297074cbe479","toSide":"bottom","label":"unstable current"},
+		{"id":"8d014f977c4d6d13","fromNode":"e0119ccb4b41c624","fromSide":"bottom","toNode":"cff4625141cbd723","toSide":"top","label":"stable rotation"},
+		{"id":"55fca4859b38ada4","fromNode":"cff4625141cbd723","fromSide":"bottom","toNode":"83d3c2e20d9f9e8e","toSide":"top"},
+		{"id":"17ebc0a07c091366","fromNode":"83d3c2e20d9f9e8e","fromSide":"bottom","toNode":"ea54977d6d22e6e7","toSide":"top"}
+	]
+}

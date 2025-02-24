@@ -1,0 +1,1 @@
+>checks speed at which satellite is rotating to see if it is within specs for camera to take a photo
